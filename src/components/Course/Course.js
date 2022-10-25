@@ -4,7 +4,7 @@ import { FaStar, FaArrowRight } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
 const Course = ({ course }) => {
-    const { id, picture, title, rating, details } = course;
+    const { picture, title, rating, } = course;
     return (
         <div className='col'>
             <Card className='h-100 bg-secondary text-white  shadow'>
