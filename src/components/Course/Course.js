@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { FaStar, FaArrowRight } from "react-icons/fa";
 import { Link } from 'react-router-dom';
@@ -18,7 +17,9 @@ const Course = ({ course }) => {
                         <p className='fs-5 me-2 text-warning'><FaStar /></p>
                         <p className='mt-1'>{rating}</p>
                     </div>
-                    <Link><button className='btn btn-success '>See Details <FaArrowRight /></button></Link>
+                    <Link>
+                        <button className='btn btn-primary '>See Details <FaArrowRight /></button>
+                    </Link>
                 </Card.Footer>
             </Card>
         </div>
