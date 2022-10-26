@@ -36,19 +36,21 @@ const Login = () => {
     }
 
     const handleGoogleLogin = () => {
-        googleLogin(githubProvider)
+        googleLogin(googleProvider)
             .then((result) => {
                 const user = result.user;
                 console.log(user)
+                navigate('/')
             }).catch((error) => {
                 console.error(error)
             });
     }
     const handleGithubLogin = () => {
-        githubLogin(googleProvider)
+        githubLogin(githubProvider)
             .then((result) => {
                 const user = result.user;
                 console.log(user)
+                navigate('/')
             }).catch((error) => {
                 console.error(error)
             });

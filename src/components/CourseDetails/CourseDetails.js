@@ -6,7 +6,7 @@ import { Link, useLoaderData } from 'react-router-dom';
 
 const CourseDetails = () => {
     const course = useLoaderData()
-    const { picture, title, details, rating, price } = course;
+    const { id, picture, title, details, rating, price } = course;
     return (
         <Container className=' mt-5'>
             <div>
@@ -38,7 +38,7 @@ const CourseDetails = () => {
                                     <p className='text-warning'><FaStar /></p>
                                     <p className='ms-2 mt-1'>{rating}</p>
                                 </div>
-                                <Link><Button variant="primary">premium access <FaArrowRight /></Button></Link>
+                                <Link to={`/course/access/${id}`}><Button variant="primary">premium access <FaArrowRight /></Button></Link>
                             </div>
                         </Card.Body>
                     </Col>
