@@ -6,8 +6,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Register = () => {
-    const { createUser } = useContext(AuthContext)
+    const { createUser, updateUserProfile } = useContext(AuthContext)
     const [error, setError] = useState(null)
+    const [accepted, setAccepted] = useState(false)
     const navigate = useNavigate();
     const handleSubmit = event => {
         event.preventDefault()
@@ -17,6 +18,8 @@ const Register = () => {
         const photoURL = form.photoURL.value;
         const email = form.email.value;
         const password = form.password.value;
+        const profile = { displayName: name, photoURL: photoURL }
+        updateUserProfile(profile)
         console.log(email, password, photoURL, name)
         createUser(email, password)
             .then((result) => {
@@ -29,6 +32,10 @@ const Register = () => {
                 console.log(error)
                 setError(error.message)
             });
+    }
+
+    const handlerAccepted = (event) => {
+        setAccepted(event.target.checked)
     }
     return (
         <div className='login-container py-5'>
@@ -54,10 +61,10 @@ const Register = () => {
                     {error}
                 </Form.Text>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label={<>Accept <Link to='/terms'>Terms and conditions</Link></>} />
+                    <Form.Check onClick={handlerAccepted} type="checkbox" label={<>Accept <Link to='/terms'>Terms and conditions</Link></>} />
                 </Form.Group>
                 <br />
-                <Button variant="primary" type="submit" disabled>
+                <Button variant="primary" type="submit" disabled={!accepted}>
                     Submit
                 </Button>
             </Form>

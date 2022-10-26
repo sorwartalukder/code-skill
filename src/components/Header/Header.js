@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { FaUserAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
@@ -18,9 +19,10 @@ const Header = () => {
                         <Link className='me-2 text-decoration-none' to='/courses'>Courses</Link>
                         <Link className='me-2 text-decoration-none' to='/blog'>Blog</Link>
                         <Link className='me-2 text-decoration-none' to='/login'>Login</Link>
-                        <Link className='text-decoration-none' to='/register'>Register</Link>
+                        <Link className='me-2 text-decoration-none' to='/register'>Register</Link>
                     </Nav>
-
+                    <button className='btn btn-outline-primary me-2'>Log Out</button>
+                    <FaUserAlt className='text-white'></FaUserAlt>
                 </Navbar.Collapse>
             </Container>
         </Navbar>
