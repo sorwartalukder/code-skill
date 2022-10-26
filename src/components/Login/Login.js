@@ -1,16 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Login.css'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import { GoogleAuthProvider } from 'firebase/auth';
 
 
 const Login = () => {
-    const { googleLogin } = useContext(AuthContext)
-    const googleProvider = new GoogleAuthProvider();
+    const [error, setError] = useState(null)
+    const { login, googleLogin } = useContext(AuthContext)
+
+    const googleProvider = new GoogleAuthProvider()
+    const navigate = useNavigate();;
+
+    const handleLogin = event => {
+        event.preventDefault()
+        setError(null)
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password)
+        login(email, password)
+            .then((result) => {
+                const user = result.user;
+                console.log(user)
+                navigate('/')
+            })
+            .catch((error) => {
+                console.error(error)
+                setError(error.message)
+            });
+    }
+
     const handleGoogleLogin = () => {
         googleLogin(googleProvider)
             .then((result) => {
@@ -22,7 +45,7 @@ const Login = () => {
     }
     return (
         <div className='login-container py-5'>
-            <Form >
+            <Form onSubmit={handleLogin} >
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control name='email' type="email" placeholder="Enter email" />
@@ -34,7 +57,7 @@ const Login = () => {
                     <Form.Control name='password' type="password" placeholder="Password" />
                 </Form.Group>
                 <Form.Text className="text-danger">
-
+                    {error}
                 </Form.Text>
                 <br />
                 <Button variant="primary" type="submit">
