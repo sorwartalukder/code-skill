@@ -4,6 +4,7 @@ import Courses from "../../components/Courses/Courses";
 import Login from "../../components/Login/Login";
 import NotFoundPage from "../../components/NotFoundPage/NotFoundPage";
 import Register from "../../components/Register/Register";
+import Terms from "../../components/Terms/Terms";
 import Main from "../../layout/Main";
 
 
@@ -35,6 +36,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '/terms',
+                element: <Terms></Terms>
             }
         ]
     }
