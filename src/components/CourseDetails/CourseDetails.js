@@ -9,9 +9,15 @@ const CourseDetails = () => {
     const { id, picture, title, details, rating, price } = course;
     return (
         <Container className=' mt-5'>
-            <div>
-                <h3>Welcome to {title} course details page.</h3>
-                <p>Your learn {title}? If yes then buy this course. The best course in this country {details[5].slice(2, 15)} level (insallah)</p>
+            <div className='d-md-flex flex-row-reverse justify-content-between'>
+                <div>
+                    <button className=' btn  btn-primary'>Download Details</button>
+                </div>
+                <div className='mt-3 mt-md-0'>
+                    <h3>Welcome to {title} course details page.</h3>
+                    <p>Your learn {title}? If yes then buy this course. The best course in this country {details[5].slice(2, 15)} level (insallah)</p>
+                </div>
+
             </div>
             <Card >
                 <Row>
