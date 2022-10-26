@@ -4,7 +4,7 @@ import { FaStar, FaArrowRight } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
 const Course = ({ course }) => {
-    const { picture, title, rating, price
+    const { id, picture, title, rating, price
     } = course;
     return (
         <div className='col'>
@@ -20,7 +20,7 @@ const Course = ({ course }) => {
                         <p className='fs-5 me-2 text-warning'><FaStar /></p>
                         <p className='mt-1'>{rating}</p>
                     </div>
-                    <Link>
+                    <Link to={`/courses/${id}`}>
                         <button className='btn btn-primary '>See Details <FaArrowRight /></button>
                     </Link>
                 </Card.Footer>

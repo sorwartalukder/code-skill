@@ -1,21 +1,35 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Col, Container, Row } from 'react-bootstrap';
+import { Link, useLoaderData } from 'react-router-dom';
 import Course from '../Course/Course';
 
 const Courses = () => {
     const courses = useLoaderData();
     return (
-        <div className='container'>
-            <div className=''>
-                <div className='row row-cols-1 row-cols-md-3 g-4 mt-5'>
-                    {
-                        courses.map(course => <Course
-                            key={course.id}
-                            course={course}
-                        ></Course>)
-                    }
-                </div>
-            </div>
+        <div>
+            <Container>
+                <Row>
+                    <Col lg='4'>
+                        {
+                            courses.map(course => <Link
+                                key={course.id}
+                                className='d-block mt-4 fs-4 fw-semibold'
+                                to={`/courses/${course.id}`}
+                            >{course.title}</Link>)
+                        }
+                    </Col>
+                    <Col lg='8'>
+                        <div className='row row-cols-1 row-cols-md-2 g-4 mt-5'>
+                            {
+                                courses.map(course => <Course
+                                    key={course.id}
+                                    course={course}
+                                ></Course>)
+                            }
+                        </div>
+                    </Col>
+                </Row>
+            </Container>
         </div>
     );
 };
