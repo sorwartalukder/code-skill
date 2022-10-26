@@ -19,11 +19,12 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
         const profile = { displayName: name, photoURL: photoURL }
-        updateUserProfile(profile)
+
         console.log(email, password, photoURL, name)
         createUser(email, password)
             .then((result) => {
                 const user = result.user;
+                updateUserProfile(profile)
                 console.log(user)
                 navigate('/')
 

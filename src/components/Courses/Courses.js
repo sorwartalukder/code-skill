@@ -4,7 +4,6 @@ import Course from '../Course/Course';
 
 const Courses = () => {
     const courses = useLoaderData();
-    console.log(courses)
     return (
         <div className='container'>
             <div className=''>

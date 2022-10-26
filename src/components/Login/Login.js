@@ -71,7 +71,7 @@ const Login = () => {
 
             <button className='btn btn-outline-primary d-block mt-1 fw-bold py-2 px-3'>Login with Github</button>
 
-            <Link className='d-block mt-5 '>
+            <Link className='d-block mt-5 ' to='/register'>
                 <button className='btn btn-success fw-bold py-2 px-3'>Create New Account</button>
             </Link>
         </div>
