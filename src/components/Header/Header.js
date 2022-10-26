@@ -40,7 +40,7 @@ const Header = () => {
 
                     {
                         user?.uid ?
-                            <Image roundedCircle src={user?.photoURL} style={{ height: '40px' }}>
+                            <Image roundedCircle src={user?.photoURL} style={{ height: '40px' }} title={user.displayName}>
                             </Image>
                             :
                             <FaUserAlt className='text-white'></FaUserAlt>

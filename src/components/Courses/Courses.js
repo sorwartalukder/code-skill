@@ -8,8 +8,9 @@ const Courses = () => {
     return (
         <div>
             <Container>
-                <Row>
+                <Row className='mt-5 '>
                     <Col lg='4'>
+                        <h2 className='fw-bold fs-1'>Courses</h2>
                         {
                             courses.map(course => <Link
                                 key={course.id}
@@ -19,7 +20,7 @@ const Courses = () => {
                         }
                     </Col>
                     <Col lg='8'>
-                        <div className='row row-cols-1 row-cols-md-2 g-4 mt-5'>
+                        <div className='row row-cols-1 row-cols-md-2 g-4 '>
                             {
                                 courses.map(course => <Course
                                     key={course.id}

@@ -6,9 +6,13 @@ import { Link, useLoaderData } from 'react-router-dom';
 
 const CourseDetails = () => {
     const course = useLoaderData()
-    const { id, picture, title, details, rating, price } = course;
+    const { picture, title, details, rating, price } = course;
     return (
         <Container className=' mt-5'>
+            <div>
+                <h3>Welcome to {title} course details page.</h3>
+                <p>Your learn {title}? If yes then buy this course. The best course in this country {details[5].slice(2, 15)} level (insallah)</p>
+            </div>
             <Card >
                 <Row>
                     <Col md='4 '>

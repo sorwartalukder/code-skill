@@ -5,14 +5,15 @@ import Form from 'react-bootstrap/Form';
 import { Link, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 
 
 const Login = () => {
     const [error, setError] = useState(null)
-    const { login, googleLogin } = useContext(AuthContext)
+    const { login, googleLogin, githubLogin } = useContext(AuthContext)
 
     const googleProvider = new GoogleAuthProvider()
+    const githubProvider = new GithubAuthProvider();
     const navigate = useNavigate();;
 
     const handleLogin = event => {
@@ -35,7 +36,16 @@ const Login = () => {
     }
 
     const handleGoogleLogin = () => {
-        googleLogin(googleProvider)
+        googleLogin(githubProvider)
+            .then((result) => {
+                const user = result.user;
+                console.log(user)
+            }).catch((error) => {
+                console.error(error)
+            });
+    }
+    const handleGithubLogin = () => {
+        githubLogin(googleProvider)
             .then((result) => {
                 const user = result.user;
                 console.log(user)
@@ -69,7 +79,7 @@ const Login = () => {
             <button onClick={handleGoogleLogin} className='btn btn-outline-success d-block mt-3 fw-bold py-2 px-3'>Login with Google</button>
 
 
-            <button className='btn btn-outline-primary d-block mt-1 fw-bold py-2 px-3'>Login with Github</button>
+            <button onClick={handleGithubLogin} className='btn btn-outline-primary d-block mt-1 fw-bold py-2 px-3'>Login with Github</button>
 
             <Link className='d-block mt-5 ' to='/register'>
                 <button className='btn btn-success fw-bold py-2 px-3'>Create New Account</button>
