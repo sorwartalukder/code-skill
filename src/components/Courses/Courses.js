@@ -7,7 +7,7 @@ const Courses = () => {
     console.log(courses)
     return (
         <div className='container'>
-            <div >
+            <div className=''>
                 <div className='row row-cols-1 row-cols-md-3 g-4 mt-5'>
                     {
                         courses.map(course => <Course

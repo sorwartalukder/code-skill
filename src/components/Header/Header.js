@@ -16,14 +16,11 @@ const Header = () => {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="ms-auto">
                         <Link className='me-2 text-decoration-none' to='/courses'>Courses</Link>
-                        <Link className='text-decoration-none' to='/blog'>Blog</Link>
+                        <Link className='me-2 text-decoration-none' to='/blog'>Blog</Link>
+                        <Link className='me-2 text-decoration-none' to='/login'>Login</Link>
+                        <Link className='text-decoration-none' to='/register'>Register</Link>
                     </Nav>
-                    <Nav>
-                        <Nav.Link eventKey={2} href="#memes">
-                            Dank memes
-                        </Nav.Link>
-                        <Nav.Link href="#deets">{user.name}</Nav.Link>
-                    </Nav>
+
                 </Navbar.Collapse>
             </Container>
         </Navbar>
