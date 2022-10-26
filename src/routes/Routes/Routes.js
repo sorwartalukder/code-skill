@@ -8,6 +8,7 @@ import NotFoundPage from "../../components/NotFoundPage/NotFoundPage";
 import Register from "../../components/Register/Register";
 import Terms from "../../components/Terms/Terms";
 import Main from "../../layout/Main";
+import PriveteRoute from "../PriveteRoute/PriveteRoute";
 
 
 
@@ -48,7 +49,7 @@ export const routes = createBrowserRouter([
             {
                 path: '/course/access/:id',
                 loader: ({ params }) => fetch(`http://localhost:5000/course/access/${params.id}`),
-                element: <AccessCourse></AccessCourse>
+                element: <PriveteRoute><AccessCourse></AccessCourse></PriveteRoute>
             },
             {
                 path: '/terms',

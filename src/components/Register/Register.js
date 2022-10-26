@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { useContext } from 'react';
+import { Spinner } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Register = () => {
-    const { createUser, updateUserProfile } = useContext(AuthContext)
+    const { loading, createUser, updateUserProfile } = useContext(AuthContext)
     const [error, setError] = useState(null)
     const [accepted, setAccepted] = useState(false)
     const navigate = useNavigate();
