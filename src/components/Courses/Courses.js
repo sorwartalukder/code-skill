@@ -9,17 +9,16 @@ const Courses = () => {
         <div>
             <Container>
                 <Row className='mt-5 '>
-                    <Col md='3'>
+                    <Col md='3' className='d-none d-md-block'>
                         <h2 className='fw-bold fs-1'>Courses</h2>
                         {
                             courses.map(course => <div
+                                className='mt-3'
                                 key={course.id}
-
                             >
-                                <Image src={course.picture} style={{ height: '40px' }} roundedCircle />
+                                <Image src={course.picture} style={{ width: '60px' }} roundedCircle />
                                 <Link
-
-                                    className=' mt-4 fw-semibold text-decoration-none'
+                                    className=' mt-4 ms-3 fw-semibold text-decoration-none'
                                     to={`/courses/${course.id}`}
                                 >{course.title}</Link>
                             </div>)

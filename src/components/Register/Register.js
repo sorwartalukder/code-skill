@@ -41,7 +41,7 @@ const Register = () => {
 
     }
     return (
-        <div className='login-container py-5'>
+        <div className='login-container p-5 bg-info mt-5 rounded shadow'>
             <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Full Name</Form.Label>
@@ -68,7 +68,7 @@ const Register = () => {
                 </Form.Group>
                 <br />
                 <Button variant="primary" type="submit" disabled={!accepted}>
-                    Submit
+                    Register
                 </Button>
             </Form>
         </div>

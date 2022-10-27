@@ -37,26 +37,34 @@ const Header = () => {
                         <Link className='me-2 text-decoration-none' to='/blog'>Blog</Link>
 
                     </Nav>
-                    {
-                        user?.uid ?
-                            <button onClick={handleLogOut} className='btn btn-outline-primary me-2'>Log Out</button>
-                            :
-                            <> <Link className='me-2 text-decoration-none' to='/login'>Login</Link>
-                                <Link className='me-2 text-decoration-none' to='/register'>Register</Link></>
-                    }
-                    <button className='btn btn-outline-primary me-2'
-                        onClick={handleClick}
-                    >
-                        {darkMode ? <FaSun></FaSun> : <FaRegMoon></FaRegMoon>}
-                    </button>
+                    <div>
+                        {
+                            user?.uid ?
+                                <button onClick={handleLogOut} className='btn btn-outline-primary me-2 my-2 my-lg-0'>Log Out</button>
+                                :
+                                <>
+                                    <Link className='me-2 text-decoration-none' to='/login'>Login</Link>
+                                    <Link className='me-2 text-decoration-none d-block d-lg-inline' to='/register'>Register</Link>
+                                </>
+                        }
+                    </div>
+                    <div>
+                        <button className='btn btn-outline-primary me-2'
+                            onClick={handleClick}
+                        >
+                            {darkMode ? <FaSun></FaSun> : <FaRegMoon></FaRegMoon>}
+                        </button>
+                    </div>
 
-                    {
-                        user?.uid ?
-                            <Link to='/user/details'><Image roundedCircle src={user?.photoURL} style={{ height: '40px' }} title={user.displayName}>
-                            </Image></Link>
-                            :
-                            <FaUserAlt className='text-white'></FaUserAlt>
-                    }
+                    <div className='mt-2 mt-lg-0'>
+                        {
+                            user?.uid ?
+                                <Link to='/user/details'><Image roundedCircle src={user?.photoURL} style={{ height: '40px' }} title={user.displayName}>
+                                </Image></Link>
+                                :
+                                <FaUserAlt className='text-white'></FaUserAlt>
+                        }
+                    </div>
 
                 </Navbar.Collapse>
             </Container>

@@ -58,7 +58,7 @@ const Login = () => {
             });
     }
     return (
-        <div className='login-container py-5'>
+        <div className='login-container p-5 bg-info mt-5 rounded shadow'>
             <Form onSubmit={handleLogin} >
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
@@ -75,7 +75,7 @@ const Login = () => {
                 </Form.Text>
                 <br />
                 <Button variant="primary" type="submit">
-                    Submit
+                    Log In
                 </Button>
             </Form>
             <Link className='text-decoration-none' to='/reset/password'>Forgotten password?</Link>

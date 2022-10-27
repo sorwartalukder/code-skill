@@ -24,11 +24,12 @@ const UserDetails = () => {
                             :
                             <p>Email: </p>
                         }
-                        {/* {user?.providerData[0]?.
+                        <p>Provider: {user?.providerData[0]?.providerId}</p>
+                        {/* {user?.providerData[0]?.providerId?
  
-                            <p>Email:{user?.email}</p>
+                            <p>Provider:{user?.providerData[0]?.providerId}</p>
                             :
-                            <p>Email: </p>
+                            <p>Provider: </p>
                         } */}
                     </div>
                 </div>

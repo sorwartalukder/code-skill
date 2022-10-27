@@ -26,7 +26,7 @@ const CourseDetails = () => {
 
             </div>
             <Card ref={ref}>
-                <Row>
+                <Row className=' bg-info p-3 rounded '>
                     <Col md='4 '>
                         <Card.Img className='h-100' src={picture} />
                     </Col>
