@@ -7,7 +7,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Register = () => {
-    const { loading, createUser, updateUserProfile } = useContext(AuthContext)
+    const { createUser, updateUserProfile } = useContext(AuthContext)
     const [error, setError] = useState(null)
     const [accepted, setAccepted] = useState(false)
     const navigate = useNavigate();
@@ -38,6 +38,7 @@ const Register = () => {
 
     const handlerAccepted = (event) => {
         setAccepted(event.target.checked)
+
     }
     return (
         <div className='login-container py-5'>

@@ -16,7 +16,7 @@ const Login = () => {
     const githubProvider = new GithubAuthProvider();
     const location = useLocation()
     const from = location.state?.from?.pathname || "/";
-    const navigate = useNavigate();;
+    const navigate = useNavigate();
 
     const handleLogin = event => {
         event.preventDefault()
@@ -78,7 +78,7 @@ const Login = () => {
                     Submit
                 </Button>
             </Form>
-            <Link className='text-decoration-none'>Forgotten password?</Link>
+            <Link className='text-decoration-none' to='/reset/password'>Forgotten password?</Link>
 
             <button onClick={handleGoogleLogin} className='btn btn-outline-success d-block mt-3 fw-bold py-2 px-3'>Login with Google</button>
 

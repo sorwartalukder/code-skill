@@ -35,11 +35,7 @@ const Header = () => {
                     <Nav className="ms-auto">
                         <Link className='me-2 text-decoration-none' to='/courses'>Courses</Link>
                         <Link className='me-2 text-decoration-none' to='/blog'>Blog</Link>
-                        <button className='btn btn-outline-primary me-2'
-                            onClick={handleClick}
-                        >
-                            {darkMode ? <FaSun></FaSun> : <FaRegMoon></FaRegMoon>}
-                        </button>
+
                     </Nav>
                     {
                         user?.uid ?
@@ -48,7 +44,11 @@ const Header = () => {
                             <> <Link className='me-2 text-decoration-none' to='/login'>Login</Link>
                                 <Link className='me-2 text-decoration-none' to='/register'>Register</Link></>
                     }
-
+                    <button className='btn btn-outline-primary me-2'
+                        onClick={handleClick}
+                    >
+                        {darkMode ? <FaSun></FaSun> : <FaRegMoon></FaRegMoon>}
+                    </button>
 
                     {
                         user?.uid ?

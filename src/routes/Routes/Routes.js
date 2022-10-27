@@ -6,6 +6,7 @@ import Courses from "../../components/Courses/Courses";
 import Login from "../../components/Login/Login";
 import NotFoundPage from "../../components/NotFoundPage/NotFoundPage";
 import Register from "../../components/Register/Register";
+import ResetPassword from "../../components/ResetPassword/ResetPassword";
 import Terms from "../../components/Terms/Terms";
 import Main from "../../layout/Main";
 import PriveteRoute from "../PriveteRoute/PriveteRoute";
@@ -51,10 +52,15 @@ export const routes = createBrowserRouter([
                 loader: ({ params }) => fetch(`https://code-skill-server.vercel.app/course/access/${params.id}`),
                 element: <PriveteRoute><AccessCourse></AccessCourse></PriveteRoute>
             },
+
             {
                 path: '/terms',
                 element: <Terms></Terms>
             }
         ]
-    }
+    },
+    {
+        path: '/reset/password',
+        element: <ResetPassword></ResetPassword>
+    },
 ])
