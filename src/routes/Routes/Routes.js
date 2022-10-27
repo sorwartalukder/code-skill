@@ -20,12 +20,12 @@ export const routes = createBrowserRouter([
         children: [
             {
                 path: '/',
-                loader: () => fetch('http://localhost:5000/courses'),
+                loader: () => fetch('https://code-skill-server.vercel.app/courses'),
                 element: <Courses></Courses>
             },
             {
                 path: '/courses',
-                loader: () => fetch('http://localhost:5000/courses'),
+                loader: () => fetch('https://code-skill-server.vercel.app/courses'),
                 element: <Courses></Courses>
             },
             {
@@ -42,13 +42,13 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/courses/:id',
-                loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`),
+                loader: ({ params }) => fetch(`https://code-skill-server.vercel.app/courses/${params.id}`),
                 element: <CourseDetails></CourseDetails>
 
             },
             {
                 path: '/course/access/:id',
-                loader: ({ params }) => fetch(`http://localhost:5000/course/access/${params.id}`),
+                loader: ({ params }) => fetch(`https://code-skill-server.vercel.app/course/access/${params.id}`),
                 element: <PriveteRoute><AccessCourse></AccessCourse></PriveteRoute>
             },
             {

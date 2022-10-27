@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useContext } from 'react';
 import Container from 'react-bootstrap/Container';
-import { Image } from 'react-bootstrap';
+import { Button, Image, InputGroup } from 'react-bootstrap';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { FaUserAlt } from 'react-icons/fa';
+import { FaLightbulb, FaRegMoon, FaSun, FaUserAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Header = () => {
+    const [darkMode, setDarkMode] = useState(true)
     const { user, logOut } = useContext(AuthContext)
     const handleLogOut = () => {
         logOut()
@@ -17,6 +18,13 @@ const Header = () => {
             .catch((error) => {
                 console.error(error)
             });
+    }
+
+    const handleClick = () => {
+        setDarkMode(true)
+        if (darkMode) {
+            setDarkMode(false)
+        }
     }
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -27,7 +35,11 @@ const Header = () => {
                     <Nav className="ms-auto">
                         <Link className='me-2 text-decoration-none' to='/courses'>Courses</Link>
                         <Link className='me-2 text-decoration-none' to='/blog'>Blog</Link>
-
+                        <button className='btn btn-outline-primary me-2'
+                            onClick={handleClick}
+                        >
+                            {darkMode ? <FaSun></FaSun> : <FaRegMoon></FaRegMoon>}
+                        </button>
                     </Nav>
                     {
                         user?.uid ?
