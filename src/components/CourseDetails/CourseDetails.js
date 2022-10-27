@@ -3,6 +3,9 @@ import { Button, Col, Container, Row } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import { FaArrowRight, FaStar } from 'react-icons/fa';
 import { Link, useLoaderData } from 'react-router-dom';
+import Pdf from "react-to-pdf";
+
+const ref = React.createRef();
 
 const CourseDetails = () => {
     const course = useLoaderData()
@@ -11,7 +14,10 @@ const CourseDetails = () => {
         <Container className=' mt-5'>
             <div className='d-md-flex flex-row-reverse justify-content-between'>
                 <div>
-                    <button className=' btn  btn-primary'>Download Details</button>
+                    <Pdf targetRef={ref} filename="course_details.pdf">
+                        {({ toPdf }) => <button onClick={toPdf} className=' btn  btn-primary'>Download Details</button>}
+
+                    </Pdf>
                 </div>
                 <div className='mt-3 mt-md-0'>
                     <h3>Welcome to {title} course details page.</h3>
@@ -19,7 +25,7 @@ const CourseDetails = () => {
                 </div>
 
             </div>
-            <Card >
+            <Card ref={ref}>
                 <Row>
                     <Col md='4 '>
                         <Card.Img className='h-100' src={picture} />

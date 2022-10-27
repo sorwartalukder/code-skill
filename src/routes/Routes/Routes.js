@@ -8,6 +8,7 @@ import NotFoundPage from "../../components/NotFoundPage/NotFoundPage";
 import Register from "../../components/Register/Register";
 import ResetPassword from "../../components/ResetPassword/ResetPassword";
 import Terms from "../../components/Terms/Terms";
+import UserDetails from "../../components/UserDetails/UserDetails";
 import Main from "../../layout/Main";
 import PriveteRoute from "../PriveteRoute/PriveteRoute";
 
@@ -53,6 +54,10 @@ export const routes = createBrowserRouter([
                 element: <PriveteRoute><AccessCourse></AccessCourse></PriveteRoute>
             },
 
+            {
+                path: '/user/details',
+                element: <UserDetails></UserDetails>
+            },
             {
                 path: '/terms',
                 element: <Terms></Terms>

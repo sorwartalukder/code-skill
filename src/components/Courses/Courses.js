@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Container, Image, Row } from 'react-bootstrap';
 import { Link, useLoaderData } from 'react-router-dom';
 import Course from '../Course/Course';
 
@@ -9,18 +9,24 @@ const Courses = () => {
         <div>
             <Container>
                 <Row className='mt-5 '>
-                    <Col lg='4'>
+                    <Col md='3'>
                         <h2 className='fw-bold fs-1'>Courses</h2>
                         {
-                            courses.map(course => <Link
+                            courses.map(course => <div
                                 key={course.id}
-                                className='d-block mt-4 fs-4 fw-semibold'
-                                to={`/courses/${course.id}`}
-                            >{course.title}</Link>)
+
+                            >
+                                <Image src={course.picture} style={{ height: '40px' }} roundedCircle />
+                                <Link
+
+                                    className=' mt-4 fw-semibold text-decoration-none'
+                                    to={`/courses/${course.id}`}
+                                >{course.title}</Link>
+                            </div>)
                         }
                     </Col>
-                    <Col lg='8'>
-                        <div className='row row-cols-1 row-cols-md-2 g-4 '>
+                    <Col md='9'>
+                        <div className='row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 '>
                             {
                                 courses.map(course => <Course
                                     key={course.id}

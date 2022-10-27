@@ -5,6 +5,7 @@ import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Image } from 'react-bootstrap';
+import toast from 'react-hot-toast';
 
 const AccessCourse = () => {
     const accessCourse = useLoaderData()
@@ -15,6 +16,7 @@ const AccessCourse = () => {
         event.preventDefault();
         const form = event.target;
         form.reset()
+        toast.success('Successfully')
     }
 
     return (
