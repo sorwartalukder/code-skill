@@ -6,6 +6,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
+import toast from 'react-hot-toast';
 
 
 const Login = () => {
@@ -29,6 +30,7 @@ const Login = () => {
             .then((result) => {
                 const user = result.user;
                 console.log(user)
+                toast.success('Successfully Log In')
                 navigate(from, { replace: true })
             })
             .catch((error) => {
@@ -42,6 +44,7 @@ const Login = () => {
             .then((result) => {
                 const user = result.user;
                 console.log(user)
+                toast.success('Successfully Log In')
                 navigate(from, { replace: true })
             }).catch((error) => {
                 console.error(error)
@@ -52,6 +55,7 @@ const Login = () => {
             .then((result) => {
                 const user = result.user;
                 console.log(user)
+                toast.success('Successfully Log In')
                 navigate(from, { replace: true })
             }).catch((error) => {
                 console.error(error)

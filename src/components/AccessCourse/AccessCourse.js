@@ -16,7 +16,7 @@ const AccessCourse = () => {
         event.preventDefault();
         const form = event.target;
         form.reset()
-        toast.success('Successfully')
+        toast.success('Successful')
     }
 
     return (

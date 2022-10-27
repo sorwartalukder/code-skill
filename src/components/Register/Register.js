@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useContext } from 'react';
-import { Spinner } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import toast from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
@@ -28,7 +28,7 @@ const Register = () => {
                 updateUserProfile(profile)
                 console.log(user)
                 navigate('/')
-
+                toast.success('Successfully Register')
             })
             .catch((error) => {
                 console.log(error)

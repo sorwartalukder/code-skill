@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useContext } from 'react';
 import Container from 'react-bootstrap/Container';
-import { Button, Image, InputGroup } from 'react-bootstrap';
+import { Image } from 'react-bootstrap';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { FaLightbulb, FaRegMoon, FaSun, FaUserAlt } from 'react-icons/fa';
+import { FaRegMoon, FaSun, FaUserAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
