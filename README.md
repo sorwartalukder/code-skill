@@ -7,7 +7,7 @@ live Website link: https://code-skill-475de.web.app/
 
 2 Express js
 
-3vercel
+3 vercel
 
 4 Bootstrap
 
