@@ -2,7 +2,7 @@ import React from 'react';
 
 const Terms = () => {
     return (
-        <div className='login-container my-5  ' >
+        <div className='login-container my-5  min-vh-100' >
             <h1 >Terms and Conditions</h1>
             <p className='m-0'>We are Termly Inc., doing business as Termly (“Termly,” “we,” “us,” or “our”), a company registered in the State of Delaware. We operate the website https://termly.io (the “Website”) through which we provide you our services, (collectively, the “Services” which include the provision and use of the Website).
 

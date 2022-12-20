@@ -11,7 +11,7 @@ const CourseDetails = () => {
     const course = useLoaderData()
     const { id, picture, title, details, rating, price } = course;
     return (
-        <Container className=' mt-5'>
+        <Container className=' mt-5 min-vh-100'>
             <div className='d-md-flex flex-row-reverse justify-content-between'>
                 <div>
                     <Pdf targetRef={ref} filename="course_details.pdf">

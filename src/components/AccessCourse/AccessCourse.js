@@ -20,7 +20,7 @@ const AccessCourse = () => {
     }
 
     return (
-        <div className='login-container mt-5'>
+        <div className='login-container mt-5  min-vh-100'>
             <Form onSubmit={handleSubmit} className='shadow-lg p-3 rounded'>
                 <div className='d-md-flex  flex-row-reverse justify-content-between'>
                     <Image className='d-block ms-auto shadow' rounded src={user?.photoURL} style={{ height: '80px' }}></Image>

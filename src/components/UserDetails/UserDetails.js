@@ -17,7 +17,7 @@ const UserDetails = () => {
     return (
         <div>
             <Form className='login-container shadow-lg p-3
-             rounded mt-5 py-5'>
+             rounded mt-5 py-5 min-vh-100'>
                 <div className='d-md-flex  flex-row-reverse justify-content-between'>
                     <Image className='d-block ms-auto shadow' rounded src={user?.photoURL} style={{ height: '80px' }}></Image>
                     <div>

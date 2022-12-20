@@ -41,37 +41,39 @@ const Register = () => {
 
     }
     return (
-        <div className='login-container p-5 bg-info mt-5 rounded shadow'>
-            <Form onSubmit={handleSubmit}>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Full Name</Form.Label>
-                    <Form.Control name='name' type="text" placeholder="Enter Full Name" required />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label> Photo URL</Form.Label>
-                    <Form.Control name='photoURL' type="text" placeholder="Enter  Photo URL" required />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control name='email' type="email" placeholder="Enter email" required />
-                </Form.Group>
+        <section className=' min-vh-100'>
+            <div className='login-container p-5 bg-info mt-5 rounded shadow'>
+                <Form onSubmit={handleSubmit}>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>Full Name</Form.Label>
+                        <Form.Control name='name' type="text" placeholder="Enter Full Name" required />
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label> Photo URL</Form.Label>
+                        <Form.Control name='photoURL' type="text" placeholder="Enter  Photo URL" required />
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>Email address</Form.Label>
+                        <Form.Control name='email' type="email" placeholder="Enter email" required />
+                    </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control name='password' type="password" placeholder="Password" required />
-                </Form.Group>
-                <Form.Text className="text-danger">
-                    {error}
-                </Form.Text>
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check onClick={handlerAccepted} type="checkbox" label={<>Accept <Link to='/terms'>Terms and conditions</Link></>} />
-                </Form.Group>
-                <br />
-                <Button variant="primary" type="submit" disabled={!accepted}>
-                    Register
-                </Button>
-            </Form>
-        </div>
+                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control name='password' type="password" placeholder="Password" required />
+                    </Form.Group>
+                    <Form.Text className="text-danger">
+                        {error}
+                    </Form.Text>
+                    <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                        <Form.Check onClick={handlerAccepted} type="checkbox" label={<>Accept <Link to='/terms'>Terms and conditions</Link></>} />
+                    </Form.Group>
+                    <br />
+                    <Button variant="primary" type="submit" disabled={!accepted}>
+                        Register
+                    </Button>
+                </Form>
+            </div>
+        </section>
     );
 };
 

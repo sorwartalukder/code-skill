@@ -62,37 +62,39 @@ const Login = () => {
             });
     }
     return (
-        <div className='login-container p-5 bg-info mt-5 rounded shadow'>
-            <Form onSubmit={handleLogin} >
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control name='email' type="email" placeholder="Enter email" />
+        <section className='min-vh-100'>
+            <div className='login-container p-5 bg-info mt-5 rounded shadow'>
+                <Form onSubmit={handleLogin} >
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>Email address</Form.Label>
+                        <Form.Control name='email' type="email" placeholder="Enter email" />
 
-                </Form.Group>
+                    </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control name='password' type="password" placeholder="Password" />
-                </Form.Group>
-                <Form.Text className="text-danger">
-                    {error}
-                </Form.Text>
-                <br />
-                <Button variant="primary" type="submit">
-                    Log In
-                </Button>
-            </Form>
-            <Link className='text-decoration-none' to='/reset/password'>Forgotten password?</Link>
+                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control name='password' type="password" placeholder="Password" />
+                    </Form.Group>
+                    <Form.Text className="text-danger">
+                        {error}
+                    </Form.Text>
+                    <br />
+                    <Button variant="primary" type="submit">
+                        Log In
+                    </Button>
+                </Form>
+                <Link className='text-decoration-none' to='/reset/password'>Forgotten password?</Link>
 
-            <button onClick={handleGoogleLogin} className='btn btn-outline-success d-block mt-3 fw-bold py-2 px-3'>Login with Google</button>
+                <button onClick={handleGoogleLogin} className='btn btn-outline-success d-block mt-3 fw-bold py-2 px-3'>Login with Google</button>
 
 
-            <button onClick={handleGithubLogin} className='btn btn-outline-primary d-block mt-1 fw-bold py-2 px-3'>Login with Github</button>
+                <button onClick={handleGithubLogin} className='btn btn-outline-primary d-block mt-1 fw-bold py-2 px-3'>Login with Github</button>
 
-            <Link className='d-block mt-5 ' to='/register'>
-                <button className='btn btn-success fw-bold py-2 px-3'>Create New Account</button>
-            </Link>
-        </div>
+                <Link className='d-block mt-5 ' to='/register'>
+                    <button className='btn btn-success fw-bold py-2 px-3'>Create New Account</button>
+                </Link>
+            </div>
+        </section>
     );
 };
 
